@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot name="hku_m100" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find DJi_M300_gazebo)/urdf/hku_m100_base.urdf.xacro" />
+    <xacro:include filename="$(find DJi_M300_gazebo)/urdf/3Dlidar_16.urdf.xacro" />
+
+
+    <xacro:hku_m100_base_macro />
+    <xacro:lidar_16 />
+
+    <joint name="lidar_joint" type="fixed">
+      <origin xyz="0 0 0.1" rpy="0.0 0.0 0.0" />
+      <parent link="base_link"/>
+      <child link="3Dlidar_16_link"/>
+    </joint>
+
+
+
+</robot>
+
